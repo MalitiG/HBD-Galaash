@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Galaash!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .birthday-text {
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        .photo-frame {
+            border: 15px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transform: rotate(-5deg);
+            transition: all 0.3s ease;
+        }
+        
+        .photo-frame:hover {
+            transform: rotate(0deg) scale(1.05);
+        }
+        
+        .confetti {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background-color: #f00;
+            opacity: 0;
+            animation: confetti 5s ease-in-out infinite;
+        }
+        
+        @keyframes confetti {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+        }
+        
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            color: #ff4081;
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .message-box {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .message-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center p-4">
+    <!-- Confetti elements -->
+    <div id="confetti-container"></div>
+    
+    <!-- Hearts elements -->
+    <div id="hearts-container"></div>
+    
+    <div class="max-w-3xl w-full text-center">
+        <!-- Header -->
+        <h1 class="birthday-text text-6xl md:text-8xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
+            Happy Birthday Galaash!
+        </h1>
+        
+        <!-- Photo frame -->
+        <div class="flex justify-center my-8">
+            <div class="photo-frame w-64 h-64 md:w-80 md:h-80 rounded-lg overflow-hidden">
+                <!-- Replace with Galaash's actual photo -->
+                <img src="Galaash.png.jpeg" 
+                     alt="Galaash" 
+                     class="w-full h-full object-cover">
+            </div>
+        </div>
+        
+        
+        
+        <!-- Birthday cake -->
+        <div class="flex justify-center my-8">
+            <div class="relative">
+                <div class="w-40 h-24 bg-amber-300 rounded-t-full"></div>
+                <div class="w-32 h-16 bg-amber-200 rounded-t-full mx-auto -mt-2"></div>
+                <div class="w-24 h-8 bg-amber-100 rounded-t-full mx-auto -mt-1"></div>
+                <div class="absolute -top-8 left-1/2 transform -translate-x-1/2">
+                    <div class="w-1 h-8 bg-amber-700 mx-auto"></div>
+                    <div class="w-4 h-4 bg-red-500 rounded-full mx-auto -mt-2"></div>
+                </div>
+                <div class="flex justify-center space-x-1 mt-2">
+                    <div class="w-2 h-2 bg-pink-500 rounded-full"></div>
+                    <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                    <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                    <div class="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Personal message -->
+        <div class="message-box p-6 md:p-8 my-6">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-pink-600">
+                Heeey Pookie💖,
+            </h2>
+            <p class="text-lg md:text-xl mb-4">
+                Happy Birthday Baby❤️. I just want you to know how much you mean to me. You’re more than a best friend you’re family. Through laughter and tears, wins and losses, you’ve always stood by my side, and I’m so grateful for every moment we’ve shared.
+            </p>
+            <p class="text-lg md:text-xl">
+               Here’s to more memories, spontaneous adventures, and all the dreams you’re yet to chase. Keep shining Pookie. The world is brighter with you in it. 🌟💫
+            </p>
+            <p class="text-xl mt-6 font-medium text-purple-600">
+                With all my love,
+            </p>
+            <p class="text-xl font-bold text-pink-600">
+                Your Best Friend Mallu🤗
+            </p>
+        </div>
+        
+        
+    
+    <script>
+        // Create confetti
+        function createConfetti() {
+            const container = document.getElementById('confetti-container');
+            const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'];
+            
+            for (let i = 0; i < 100; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                
+                // Random properties
+                const size = Math.random() * 10 + 5;
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                const left = Math.random() * 100;
+                const animationDuration = Math.random() * 3 + 2;
+                const delay = Math.random() * 5;
+                
+                confetti.style.width = `${size}px`;
+                confetti.style.height = `${size}px`;
+                confetti.style.backgroundColor = color;
+                confetti.style.left = `${left}%`;
+                confetti.style.animationDuration = `${animationDuration}s`;
+                confetti.style.animationDelay = `${delay}s`;
+                
+                // Random shape
+                if (Math.random() > 0.5) {
+                    confetti.style.borderRadius = '50%';
+                } else {
+                    confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+                }
+                
+                container.appendChild(confetti);
+            }
+        }
+        
+        // Create floating hearts
+        function createHearts() {
+            const container = document.getElementById('hearts-container');
+            
+            for (let i = 0; i < 20; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.innerHTML = '❤️';
+                
+                // Random properties
+                const left = Math.random() * 100;
+                const size = Math.random() * 20 + 10;
+                const duration = Math.random() * 3 + 2;
+                const delay = Math.random() * 5;
+                
+                heart.style.left = `${left}%`;
+                heart.style.fontSize = `${size}px`;
+                heart.style.animationDuration = `${duration}s`;
+                heart.style.animationDelay = `${delay}s`;
+                heart.style.top = `${Math.random() * 100}%`;
+                
+                container.appendChild(heart);
+            }
+        }
+        
+        // Initialize effects
+        window.onload = function() {
+            createConfetti();
+            createHearts();
+            
+            // Play birthday song
+            const audio = new Audio('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3');
+            audio.loop = true;
+            
+            // Uncomment to autoplay music (might not work in all browsers due to autoplay policies)
+            // audio.play().catch(e => console.log("Autoplay prevented: ", e));
+            
+            // Add click to play
+            document.body.addEventListener('click', function() {
+                audio.play().catch(e => console.log("Play prevented: ", e));
+            });
+        };
+    </script>
+</body>
+</html>
